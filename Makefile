@@ -49,6 +49,16 @@ $(BUILD_DIR)/%: $(SRC_DIR)/%.c
 
 # -----------------------
 # Run targets (run whatever was built, in order)
+
+hello: $(BUILD_DIR)/hello
+calculator: $(BUILD_DIR)/calculator
+formats: $(BUILD_DIR)/formats
+
+run-hello: hello
+	./$(BUILD_DIR)/hello
+
+run-calculator: calculator
+	./$(BUILD_DIR)/calculator
 # -----------------------
 run-lab1: lab1
 	@for p in $(LAB1); do echo "== $$p =="; ./$$p; done
